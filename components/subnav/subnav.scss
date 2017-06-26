@@ -1,0 +1,61 @@
+/* Components - Subnav
+******************************************************************************/
+
+@import "../../sass/variables";
+@import "../../sass/mixins";
+
+#skilljar-content {
+}
+
+#subNav {
+  bottom: auto;
+  display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 45px;
+  z-index: 5;
+
+  @include tablet {
+    text-align: left;
+    top: 60px;
+  }
+
+  .sub-nav {
+    background: $color-orange;
+    margin-bottom: 0;
+    width: 100%;
+
+    li {
+      color: white;
+      display: inline-block;
+      padding: 5px 10px;
+      transition: background 150ms ease;
+
+      @include tablet {
+        padding: 5px;
+        padding: 10px 20px;
+      }
+
+      a {
+        color: white;
+        font-size: 14px;
+        font-weight: 400;
+
+        @include tablet {
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+
+      &:hover {
+        background: darken($color-orange, 10%);
+      }
+    }
+  }
+}
+
+.sj-page-catalog #subNav {
+  display: block;
+}

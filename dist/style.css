@@ -1,0 +1,76 @@
+/* Variables
+******************************************************************************/
+/**
+ * Breakpoints
+ */
+/**
+ * Typography
+ */
+/**
+ * Colors
+ */
+/* Components - Main
+******************************************************************************/
+#catalog-left-nav {
+  background: white; }
+
+#skilljar-content {
+  background: white !important; }
+
+section {
+  background: pink; }
+
+/* Components - Subnav
+******************************************************************************/
+/* Variables
+******************************************************************************/
+/**
+ * Breakpoints
+ */
+/**
+ * Typography
+ */
+/**
+ * Colors
+ */
+/* Mixins
+******************************************************************************/
+#subNav {
+  bottom: auto;
+  display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 45px;
+  z-index: 5; }
+  @media (min-width: 768px) {
+    #subNav {
+      text-align: left;
+      top: 60px; } }
+  #subNav .sub-nav {
+    background: #E76A1F;
+    margin-bottom: 0;
+    width: 100%; }
+    #subNav .sub-nav li {
+      color: white;
+      display: inline-block;
+      padding: 5px 10px;
+      transition: background 150ms ease; }
+      @media (min-width: 768px) {
+        #subNav .sub-nav li {
+          padding: 5px;
+          padding: 10px 20px; } }
+      #subNav .sub-nav li a {
+        color: white;
+        font-size: 14px;
+        font-weight: 400; }
+        @media (min-width: 768px) {
+          #subNav .sub-nav li a {
+            font-size: 16px;
+            font-weight: 600; } }
+      #subNav .sub-nav li:hover {
+        background: #bf5414; }
+
+.sj-page-catalog #subNav {
+  display: block; }
