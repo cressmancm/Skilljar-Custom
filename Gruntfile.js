@@ -33,16 +33,29 @@ module.exports = function(grunt) {
     },
 
     concat: {
-      dist: {
+      basic: {
         files: {
           'dist/markup.html': [
           'src/components/subnav/subnav.html',
-          'src/components/hero/hero.html',
           'src/components/tile/tile.html',
-          'src/components/tile-sort/tile-sort.html'
+          'src/components/tile-sort/tile-sort.html',
           ]
         }
       },
+      full: {
+        files: {
+          'dist/global-code-snippet.html': [
+          'src/components/subnav/subnav.html',
+          'src/components/tile/tile.html',
+          'src/components/tile-sort/tile-sort.html',
+          'dist/tmp/dist/script.js',
+          'dist/tmp/dist/style.css'
+          ]
+        },
+        options: {
+          separator: '\n',
+        },
+      }
     },
 
     uglify: {
@@ -89,25 +102,49 @@ module.exports = function(grunt) {
     },
 
     imagemin: {
-        dynamic: {
-            files: [{
-                expand: true,
-                cwd: 'src/',
-                src: ['**/*.{png,jpg,gif}'],
-                dest: 'dist/'
-            }]
+      dynamic: {
+        files: [{
+          expand: true,
+          cwd: 'src/',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'dist/'
+        }]
+      }
+    },
+
+    wrap: {
+      script: {
+        src: ['dist/script.js'],
+        dest: 'dist/tmp/',
+        options: {
+          wrapper: ['<script>', '</script>']
         }
+      },
+      style: {
+        src: ['dist/style.css'],
+        dest: 'dist/tmp/',
+        options: {
+          wrapper: ['<style>', '</style>']
+        }
+      }
+    },
+
+    clean: {
+      pre: ['dist'],
+      post: ['dist/tmp']
     },
 
   });
 
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-postcss');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-wrap');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
-  grunt.registerTask('build', ['imagemin', 'concat', 'uglify', 'sass', 'postcss']);
-  grunt.registerTask('default', ['concat', 'uglify', 'sass', 'postcss', 'watch']);
+  grunt.registerTask('build', ['clean:pre', 'imagemin', 'concat:basic', 'uglify', 'sass', 'postcss', 'wrap', 'concat:full', 'clean:post']);
+  grunt.registerTask('default', ['clean:pre', 'concat:basic', 'uglify', 'sass', 'postcss', 'watch']);
 }
