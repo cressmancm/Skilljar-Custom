@@ -1,25 +1,13 @@
 {
-  "name": "remote",
+  "name": "Skilljar-Custom",
   "version": "1.0.0",
-  "description": "",
-  "main": "Gruntfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://cressmancm@github.com/cressmancm/remote.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cressmancm/remote/issues"
-  },
-  "homepage": "https://github.com/cressmancm/remote#readme",
   "devDependencies": {
+    "autoprefixer": "^7.1.1",
     "grunt": "^1.0.1",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0"
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.8.0"
   }
 }
