@@ -49,7 +49,7 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'dist/script.js': [
-          'vendor/js/tinysort.min.js',
+          'src/vendor/js/tinysort.min.js',
           'src/components/subnav/subnav.js',
           'src/components/hero/hero.js',
           'src/components/tile/tile.js',
