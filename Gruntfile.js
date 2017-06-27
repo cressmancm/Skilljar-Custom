@@ -9,7 +9,8 @@ module.exports = function(grunt) {
           'dist/style.css': 'sass/style.scss',
           'components/tile/tile.css': 'components/tile/tile.scss',
           'components/hero/hero.css': 'components/hero/hero.scss',
-          'components/subnav/subnav.css': 'components/subnav/subnav.scss'
+          'components/subnav/subnav.css': 'components/subnav/subnav.scss',
+          'components/tile-sort/tile-sort.css': 'components/tile-sort/tile-sort.scss'
         }
       },
       options: {
@@ -19,8 +20,22 @@ module.exports = function(grunt) {
 
     concat: {
       dist: {
-        src: ['components/subnav/subnav.js', 'components/hero/hero.js', 'components/tile/tile.js'],
-        dest: 'dist/script.js',
+        files: {
+          'dist/script.js': [
+          'vendor/js/tinysort.min.js',
+          'vendor/js/jquery.tinysort.min.js',
+          'components/subnav/subnav.js',
+          'components/hero/hero.js',
+          'components/tile/tile.js',
+          'components/tile-sort/tile-sort.js'
+          ],
+          'dist/markup.html': [
+          'components/subnav/subnav.html',
+          'components/hero/hero.html',
+          'components/tile/tile.html',
+          'components/tile-sort/tile-sort.html'
+          ]
+        }
       },
     },
 
@@ -33,7 +48,7 @@ module.exports = function(grunt) {
         }
       },
       js: {
-        files: 'components/**/*.js',
+        files: ['components/**/*.html', 'components/**/*.js'],
         tasks: ['concat'],
         options: {
           livereload: true

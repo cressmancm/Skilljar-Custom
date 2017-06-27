@@ -9,16 +9,49 @@
 /**
  * Colors
  */
-/* Components - Main
+/* Component - Hero
 ******************************************************************************/
-#catalog-left-nav {
-  background: white; }
+/* Variables
+******************************************************************************/
+/**
+ * Breakpoints
+ */
+/**
+ * Typography
+ */
+/**
+ * Colors
+ */
+/* Mixins
+******************************************************************************/
+.storefront .top-row {
+  padding-top: 0; }
 
-#skilljar-content {
-  background: white !important; }
+.catalog-center-width.one-col-full {
+  width: 100% !important;
+  padding: 0; }
+  .catalog-center-width.one-col-full .catalog-header {
+    padding: 0; }
 
-section {
-  background: pink; }
+.hero {
+  background-image: url("http://scratch.local/images/bg-whiteboard-dark.jpg");
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 20px;
+  padding: 10%;
+  text-align: center; }
+  @media (min-width: 1280px) {
+    .hero {
+      padding: 100px 0; } }
+  .hero h1 {
+    color: white;
+    font-size: 2em;
+    font-size: calc(2em + 1vw); }
+  .hero h2 {
+    color: white;
+    font-size: 1em;
+    font-size: calc(1em + 1vw); }
 
 /* Components - Subnav
 ******************************************************************************/
@@ -43,7 +76,7 @@ section {
   right: 0;
   text-align: center;
   top: 45px;
-  z-index: 5; }
+  z-index: 2; }
   @media (min-width: 768px) {
     #subNav {
       text-align: left;
@@ -72,5 +105,55 @@ section {
       #subNav .sub-nav li:hover {
         background: #bf5414; }
 
-.sj-page-catalog #subNav {
+.sj-page-catalog #subNav,
+.sj-page-curriculum #subNav {
   display: block; }
+
+/* Components - Tile Sort
+******************************************************************************/
+/* Variables
+******************************************************************************/
+/**
+ * Breakpoints
+ */
+/**
+ * Typography
+ */
+/**
+ * Colors
+ */
+/* Mixins
+******************************************************************************/
+#tileSort {
+  background: #E76A1F;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 300;
+  list-style: none;
+  padding: 5px;
+  text-align: center;
+  user-select: none;
+  width: 100px; }
+  #tileSort li {
+    display: none; }
+    #tileSort li:first-child {
+      display: block; }
+
+.search #tileSort {
+  display: none; }
+
+#catalog-left-nav {
+  background: #FFFFFF; }
+
+#skilljar-content {
+  background: #FFFFFF !important; }
+
+.sj-page-login #skilljar-content,
+.sj-page-signup #skilljar-content {
+  background-color: #FFFFFF !important;
+  background-image: url("http://scratch.local/images/bg-whiteboard.jpg") !important;
+  background-position: 100% 95% !important;
+  background-repeat: no-repeat !important; }

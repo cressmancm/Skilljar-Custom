@@ -4,9 +4,6 @@
 @import "../../sass/variables";
 @import "../../sass/mixins";
 
-#skilljar-content {
-}
-
 #subNav {
   bottom: auto;
   display: none;
@@ -15,7 +12,7 @@
   right: 0;
   text-align: center;
   top: 45px;
-  z-index: 5;
+  z-index: 2;
 
   @include tablet {
     text-align: left;
@@ -23,7 +20,7 @@
   }
 
   .sub-nav {
-    background: $color-orange;
+    background: $color-main;
     margin-bottom: 0;
     width: 100%;
 
@@ -50,12 +47,15 @@
       }
 
       &:hover {
-        background: darken($color-orange, 10%);
+        background: darken($color-main, 10%);
       }
     }
   }
 }
 
-.sj-page-catalog #subNav {
-  display: block;
+.sj-page-catalog,
+.sj-page-curriculum {
+  #subNav {
+    display: block;
+  }
 }

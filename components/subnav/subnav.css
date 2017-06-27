@@ -21,7 +21,7 @@
   right: 0;
   text-align: center;
   top: 45px;
-  z-index: 5; }
+  z-index: 2; }
   @media (min-width: 768px) {
     #subNav {
       text-align: left;
@@ -50,5 +50,6 @@
       #subNav .sub-nav li:hover {
         background: #bf5414; }
 
-.sj-page-catalog #subNav {
+.sj-page-catalog #subNav,
+.sj-page-curriculum #subNav {
   display: block; }

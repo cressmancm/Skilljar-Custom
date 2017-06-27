@@ -1,7 +1,6 @@
 jQuery(document).ready(function($) {
 
   function positionElements() {
-
     var subNavHeight = $('#subNav').height();
     var headerHeight = $('#header').height();
 
@@ -15,10 +14,12 @@ jQuery(document).ready(function($) {
   }
 
   var nav = $('#subNav').detach();
-  $('#main-container #header').after(nav);
 
-  positionElements();
+  if ($('.sj-page-catalog, .sj-page-curriculum').length > 0) {
+    $('#main-container #header').after(nav);
+    positionElements();
+    $(window).resize(positionElements);
+  }
 
-  $(window).resize(positionElements);
-
+  nav = null;
 });

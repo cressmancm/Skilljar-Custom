@@ -1,0 +1,35 @@
+/* Components - Tile Sort
+******************************************************************************/
+/* Variables
+******************************************************************************/
+/**
+ * Breakpoints
+ */
+/**
+ * Typography
+ */
+/**
+ * Colors
+ */
+/* Mixins
+******************************************************************************/
+#tileSort {
+  background: #E76A1F;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 300;
+  list-style: none;
+  padding: 5px;
+  text-align: center;
+  user-select: none;
+  width: 100px; }
+  #tileSort li {
+    display: none; }
+    #tileSort li:first-child {
+      display: block; }
+
+.search #tileSort {
+  display: none; }

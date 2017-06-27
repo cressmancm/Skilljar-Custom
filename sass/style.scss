@@ -1,8 +1,25 @@
 
 @import "variables";
 
-@import "../components/main/main";
 @import "../components/tile/tile";
 @import "../components/hero/hero";
 @import "../components/subnav/subnav";
+@import "../components/tile-sort/tile-sort";
 
+#catalog-left-nav {
+  background: $color-left-nav-bg;
+}
+
+#skilljar-content {
+  background: $color-main-bg !important;
+}
+
+.sj-page-login,
+.sj-page-signup {
+   #skilljar-content {
+    background-color: $color-main-bg !important;
+    background-image: url('http://scratch.local/images/bg-whiteboard.jpg') !important;
+    background-position: 100% 95% !important;
+    background-repeat: no-repeat !important;
+  }
+}
