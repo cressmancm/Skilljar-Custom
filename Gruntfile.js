@@ -134,17 +134,28 @@ module.exports = function(grunt) {
       post: ['dist/tmp']
     },
 
+    copy: {
+      images: {
+        expand: true,
+        src: 'src/**/*.{png,jpg,jpeg,gif}',
+        dest: 'dist/images',
+        flatten: true
+      },
+    },
+
   });
 
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-wrap');
-  grunt.loadNpmTasks('grunt-contrib-clean');
 
+  grunt.registerTask('myCopy', ['copy:images']);
   grunt.registerTask('build', ['clean:pre', 'imagemin', 'concat:basic', 'uglify', 'sass', 'postcss', 'wrap', 'concat:full', 'clean:post']);
-  grunt.registerTask('default', ['clean:pre', 'concat:basic', 'uglify', 'sass', 'postcss', 'watch']);
+  grunt.registerTask('default', ['clean:pre', 'copy', 'concat:basic', 'uglify', 'sass', 'postcss', 'watch']);
 }

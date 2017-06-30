@@ -17,10 +17,20 @@
 
 .sj-page-login,
 .sj-page-signup {
-   #skilljar-content {
+  #skilljar-content {
     background-color: $color-main-bg !important;
-    background-image: url('https://raw.githubusercontent.com/cressmancm/Skilljar-Custom/master/dist/images/bg-drawings.jpg') !important;
+    background-image: url('https://raw.githubusercontent.com/cressmancm/Skilljar-Custom/master/dist/images/bg-whiteboard.jpg') !important;
     background-position: 100% 95% !important;
     background-repeat: no-repeat !important;
   }
+}
+
+#login-content > .row > .columns {
+  background: rgba(255,255,255,0.85);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.socialaccount_providers {
+  display: none;
 }
