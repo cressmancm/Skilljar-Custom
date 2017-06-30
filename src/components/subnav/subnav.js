@@ -11,6 +11,11 @@ jQuery(document).ready(function($) {
     $('#skilljar-content').css({
       'padding-top': subNavHeight + headerHeight + 'px'
     });
+
+    $('#lpLeftNavBackground').css({
+      'top': headerHeight + 'px',
+      'left': 0
+    });
   }
 
   var nav = $('#subNav').detach();
